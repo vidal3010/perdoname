@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Me perdonas?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        video {
+            width: 80%;
+            max-width: 600px;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff3366;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .yes {
+            background-color: green;
+            color: white;
+        }
+        .no {
+            background-color: red;
+            color: white;
+        }
+        .love-message {
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            background-color: pink;
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 150, 0.5);
+            text-align: center;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <video id="sadVideo1" controls autoplay loop>
+            <source src="C:/Users/VIDAL/Downloads/triste1.mp4" type="video/mp4">
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+    <h2>¿ME PERDONAS?</h2>
+    <div class="buttons">
+        <button class="button yes" id="yesButton" onclick="showLoveMessage()">SIII</button>
+        <button class="button no" id="noButton" onclick="changeNoText()">NO</button>
+    </div>
+    
+    <script>
+        let yesButton = document.getElementById("yesButton");
+        let noButton = document.getElementById("noButton");
+        let yesSize = 20;
+        let noMessages = [
+            "¿ESTÁS SEGURA?", "¿ESTÁS COMPLETAMENTE SEGURA?", "¿POR FAVOR?", "¿POR FAVOR, POR FAVOR?", 
+            "¿DE VERDAD NO ME PERDONAS?", "¿ÚLTIMA OPORTUNIDAD...", "NO ME HAGAS ESTO...", 
+            "ÁNDALE, PERDÓNAME...", "DEJA DE DARLE CLICK AQUÍ!!", "YA, PERDÓNAME...", "NO DIGAS QUE NO...", 
+            "PLEASE, AMORCITO...", "¿DE VERDAD QUIERES HACERME SUFRIR?", "VOY A LLORAR...", 
+            "TE AMO, NO SEAS ASÍ...", "ANDA, NO ME TORTURES MÁS...", "SIN TI NO SOY NADA...", "AÑAÑE AMORCHIIIII"
+        ];
+        let noIndex = 0;
+        
+        function showLoveMessage() {
+            document.body.innerHTML = `
+                <video controls autoplay loop>
+                    <source src="C:/Users/VIDAL/Downloads/feliz.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                <div class="love-message">💖 GRACIAAAAAAS, MI AMOOOR. TE AMOOOOOO. 💖<br>🌸 ERES LA MEJOOOOOOR Y EL AMOR DE MI VIDAAAA. 🌸</div>
+            `;
+        }
+        
+        function changeNoText() {
+            if (noIndex < noMessages.length - 1) {
+                noButton.innerText = noMessages[noIndex];
+                noIndex++;
+            } else {
+                noButton.innerText = "AÑAÑE AMORCHIIIII";
+            }
+            yesSize += 10;
+            yesButton.style.fontSize = yesSize + "px";
+        }
+    </script>
+</body>
+</html>
+

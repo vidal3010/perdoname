@@ -17,6 +17,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
         }
         h2 {
             font-size: 36px;
@@ -35,6 +37,10 @@
             cursor: pointer;
             margin: 10px;
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s ease-in-out;
+        }
+        .button:hover {
+            transform: scale(1.1);
         }
         .yes {
             background-color: green;
@@ -61,7 +67,7 @@
 <body>
     <div>
         <video id="sadVideo1" controls autoplay loop>
-            <source src="triste1.mp4" type="video/mp4">
+            <source src="https://drive.google.com/uc?export=download&id=1gXVm9wCJIjastAu2BageOiLlgZD-ny5M" type="video/mp4">
             Tu navegador no soporta el elemento de video.
         </video>
     </div>
@@ -87,7 +93,7 @@
         function showLoveMessage() {
             document.body.innerHTML = `
                 <video controls autoplay loop>
-                    <source src="feliz.mp4" type="video/mp4">
+                    <source src="https://drive.google.com/uc?export=download&id=1nRr2ijHPtJMck4jnvvUOR463OVl94d3G" type="video/mp4">
                     Tu navegador no soporta el elemento de video.
                 </video>
                 <div class="love-message">💖 GRACIAAAAAAS, MI AMOOOR. TE AMOOOOOO. 💖<br>🌸 ERES LA MEJOOOOOOR Y EL AMOR DE MI VIDAAAA. 🌸</div>
@@ -98,8 +104,6 @@
             if (noIndex < noMessages.length - 1) {
                 noButton.innerText = noMessages[noIndex];
                 noIndex++;
-            } else {
-                noButton.innerText = "AÑAÑE AMORCHIIIII";
             }
             yesSize += 10;
             yesButton.style.fontSize = yesSize + "px";
